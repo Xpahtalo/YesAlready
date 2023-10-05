@@ -26,38 +26,21 @@
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
   </PropertyGroup>
 
+  <Import Project="Dalamud.Plugin.Bootstrap.targets"/>
+  
   <ItemGroup>
     <Content Include="..\res\icon.png" Link="images\icon.png" CopyToOutputDirectory="PreserveNewest" Visible="false" />
   </ItemGroup>
-
-  <PropertyGroup>
-    <DalamudLibPath>$(appdata)\XIVLauncher\addon\Hooks\dev\</DalamudLibPath>
-  </PropertyGroup>
-
-  <PropertyGroup>
-    <AssemblySearchPaths>
-      $(AssemblySearchPaths);
-      $(DalamudLibPath);
-    </AssemblySearchPaths>
-  </PropertyGroup>
 
   <ItemGroup>
     <AdditionalFiles Include="..\stylecop.json" />
   </ItemGroup>
 
   <ItemGroup>
-    <!--<PackageReference Include="DalamudLinter" Version="1.0.3" />-->
-    <PackageReference Include="DalamudPackager" Version="2.1.12" />
     <PackageReference Include="StyleCop.Analyzers" Version="1.2.0-beta.333">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <ProjectReference Include="..\lib\ClickLib\ClickLib\ClickLib.csproj" />
-    <Reference Include="Dalamud" Private="False" />
-    <Reference Include="FFXIVClientStructs" Private="False" />
-    <Reference Include="ImGui.NET" Private="False" />
-    <Reference Include="Lumina" Private="False" />
-    <Reference Include="Lumina.Excel" Private="False" />
-    <Reference Include="Newtonsoft.Json" Private="False" />
   </ItemGroup>
 </Project>
