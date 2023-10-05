@@ -72,7 +72,9 @@ public sealed partial class YesAlreadyPlugin : IDalamudPlugin
         });
     }
 
-    /// <inheritdoc/>
+    /// <summary>
+    /// Gets plugin name.
+    /// </summary>
     public string Name => "Yes Already";
 
     /// <summary>
