@@ -52,7 +52,7 @@ internal class AddonTalkFeature : UpdateFeature
             if (this.clickTalk == null || this.lastTalkAddon != addon)
                 this.clickTalk = ClickTalk.Using(this.lastTalkAddon = addon);
 
-            PluginLog.Debug("AddonTalk: Advancing");
+            Service.PluginLog.Debug("AddonTalk: Advancing");
             this.clickTalk.Click();
             return;
         }

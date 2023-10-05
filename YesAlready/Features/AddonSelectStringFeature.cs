@@ -35,7 +35,7 @@ internal class AddonSelectStringFeature : OnSetupSelectListFeature
     /// <inheritdoc/>
     protected override void SelectItemExecute(IntPtr addon, int index)
     {
-        PluginLog.Debug($"AddonSelectString: Selecting {index}");
+        Service.PluginLog.Debug($"AddonSelectString: Selecting {index}");
         ClickSelectString.Using(addon).SelectItem((ushort)index);
     }
 }

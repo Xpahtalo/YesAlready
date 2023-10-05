@@ -59,7 +59,7 @@ internal abstract class UpdateFeature : IBaseFeature
     private void UpdateDetour(IntPtr addon, IntPtr a2, IntPtr a3)
     {
         // Update is noisy, dont echo here.
-        // PluginLog.Debug($"Addon{this.AddonName}.Update");
+        // Service.PluginLog.Debug($"Addon{this.AddonName}.Update");
         this.updateHook.Original(addon, a2, a3);
 
         if (!Service.Configuration.Enabled || Service.Plugin.DisableKeyPressed)
@@ -74,7 +74,7 @@ internal abstract class UpdateFeature : IBaseFeature
         }
         catch (Exception ex)
         {
-            PluginLog.Error(ex, "Don't crash the game");
+            Service.PluginLog.Error(ex, "Don't crash the game");
         }
     }
 }

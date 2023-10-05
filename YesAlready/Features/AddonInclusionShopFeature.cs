@@ -51,11 +51,11 @@ internal class AddonInclusionShopFeature : OnSetupFeature, IDisposable
 
         var unitbase = (AtkUnitBase*)addon;
 
-        PluginLog.Debug($"Firing 12,{Service.Configuration.InclusionShopRememberCategory}");
+        Service.PluginLog.Debug($"Firing 12,{Service.Configuration.InclusionShopRememberCategory}");
         using var categoryValues = new AtkValueArray(12, Service.Configuration.InclusionShopRememberCategory);
         unitbase->FireCallback(2, categoryValues);
 
-        PluginLog.Debug($"Firing 13,{Service.Configuration.InclusionShopRememberSubcategory}");
+        Service.PluginLog.Debug($"Firing 13,{Service.Configuration.InclusionShopRememberSubcategory}");
         using var subcategoryValues = new AtkValueArray(13, Service.Configuration.InclusionShopRememberSubcategory);
         unitbase->FireCallback(2, subcategoryValues);
     }
@@ -77,7 +77,7 @@ internal class AddonInclusionShopFeature : OnSetupFeature, IDisposable
             var val1 = values[1].UInt;
             if (val1 != Service.Configuration.InclusionShopRememberCategory)
             {
-                PluginLog.Debug($"Remembring InclusionShop category: {val1}");
+                Service.PluginLog.Debug($"Remembring InclusionShop category: {val1}");
                 Service.Configuration.InclusionShopRememberCategory = val1;
                 Service.Configuration.InclusionShopRememberSubcategory = 0;
                 Service.Configuration.Save();
@@ -88,7 +88,7 @@ internal class AddonInclusionShopFeature : OnSetupFeature, IDisposable
             var val1 = values[1].UInt;
             if (val1 != Service.Configuration.InclusionShopRememberSubcategory)
             {
-                PluginLog.Debug($"Remembring InclusionShop subcategory: {val1}");
+                Service.PluginLog.Debug($"Remembring InclusionShop subcategory: {val1}");
                 Service.Configuration.InclusionShopRememberSubcategory = val1;
                 Service.Configuration.Save();
             }

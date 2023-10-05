@@ -59,7 +59,7 @@ internal abstract class OnSetupFeature : IBaseFeature
 
     private IntPtr OnSetupDetour(IntPtr addon, uint a2, IntPtr data)
     {
-        PluginLog.Debug($"Addon{this.AddonName}.OnSetup");
+        Service.PluginLog.Debug($"Addon{this.AddonName}.OnSetup");
         var result = this.onSetupHook.Original(addon, a2, data);
 
         if (!Service.Configuration.Enabled || Service.Plugin.DisableKeyPressed)
@@ -74,7 +74,7 @@ internal abstract class OnSetupFeature : IBaseFeature
         }
         catch (Exception ex)
         {
-            PluginLog.Error(ex, "Don't crash the game");
+            Service.PluginLog.Error(ex, "Don't crash the game");
         }
 
         return result;

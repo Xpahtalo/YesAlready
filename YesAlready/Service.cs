@@ -1,10 +1,5 @@
-using Dalamud.Data;
 using Dalamud.Game;
-using Dalamud.Game.ClientState;
-using Dalamud.Game.ClientState.Keys;
 using Dalamud.Game.ClientState.Objects;
-using Dalamud.Game.Command;
-using Dalamud.Game.Gui;
 using Dalamud.IoC;
 using Dalamud.Plugin;
 using Dalamud.Plugin.Services;
@@ -85,6 +80,16 @@ internal class Service
     /// </summary>
     [PluginService]
     internal static ITargetManager TargetManager { get; private set; } = null!;
+
+    /// <summary>
+    /// Gets the Dalamud game interop provider.
+    /// </summary>
     [PluginService]
     internal static IGameInteropProvider Hook { get; private set; } = null!;
+
+    /// <summary>
+    /// Gets the Dalamud plugin logger.
+    /// </summary>
+    [PluginService]
+    internal static IPluginLog PluginLog { get; private set; } = null!;
 }

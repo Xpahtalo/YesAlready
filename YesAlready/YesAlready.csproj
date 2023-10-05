@@ -52,7 +52,7 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <ProjectReference Include="..\..\ClickLib\ClickLib\ClickLib.csproj" />
+    <ProjectReference Include="..\lib\ClickLib\ClickLib\ClickLib.csproj" />
     <Reference Include="Dalamud" Private="False" />
     <Reference Include="FFXIVClientStructs" Private="False" />
     <Reference Include="ImGui.NET" Private="False" />
