@@ -63,7 +63,7 @@ public sealed partial class YesAlreadyPlugin : IDalamudPlugin
         this.windowSystem.AddWindow(this.zoneListWindow = new());
 
         Service.Interface.UiBuilder.Draw += this.windowSystem.Draw;
-        Service.Interface.UiBuilder.OpenConfigUi += this.OnOpenConfigUi;
+        Service.Interface.UiBuilder.OpenMainUi += this.OnOpenMainUi;
 
         Service.CommandManager.AddHandler(Command, new CommandInfo(this.OnChatCommand)
         {
@@ -134,7 +134,7 @@ public sealed partial class YesAlreadyPlugin : IDalamudPlugin
 
         Service.CommandManager.RemoveHandler(Command);
 
-        Service.Interface.UiBuilder.OpenConfigUi -= this.OnOpenConfigUi;
+        Service.Interface.UiBuilder.OpenConfigUi -= this.OnOpenMainUi;
         Service.Interface.UiBuilder.Draw -= this.windowSystem.Draw;
 
         this.features.ForEach(feature => feature?.Dispose());
@@ -176,7 +176,7 @@ public sealed partial class YesAlreadyPlugin : IDalamudPlugin
     /// <summary>
     /// Opens the config window.
     /// </summary>
-    internal void OnOpenConfigUi() => this.configWindow.IsOpen = true;
+    internal void OnOpenMainUi() => this.configWindow.IsOpen = true;
 
     #region SeString
 
